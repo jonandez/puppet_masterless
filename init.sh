@@ -30,7 +30,8 @@ touch /etc/puppet/manifests/site.pp
 cat << 'EOF' > /etc/puppet/manifests/site.pp
 
 node default {
-    include cron-puppet
+    include init_conf
+    include basic_server
 }
 
 EOF
@@ -38,3 +39,4 @@ EOF
 # Pull repo
 cd /etc/puppet/modules/ && git clone https://github.com/jonandez/puppet_masterless.git
 mv /etc/puppet/modules/puppet_masterless/modules /etc/puppet/modules/ 
+rm -rf /etc/puppet/modules/puppet_masterless/
