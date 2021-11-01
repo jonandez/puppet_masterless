@@ -33,3 +33,7 @@ node default {
 }
 
 EOF
+
+# Pull repo
+cd /etc/puppet/ && git pull https://github.com/jonandez/puppet_masterless.git
+mv /etc/puppet/modules/puppet_masterless/modules /etc/puppet/modules/ 
