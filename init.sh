@@ -38,5 +38,5 @@ EOF
 
 # Pull repo
 cd /etc/puppet/modules/ && git clone https://github.com/jonandez/puppet_masterless.git
-mv /etc/puppet/modules/puppet_masterless/modules /etc/puppet/modules/ 
+mv /etc/puppet/modules/puppet_masterless/modules/* /etc/puppet/modules/ 
 rm -rf /etc/puppet/modules/puppet_masterless/

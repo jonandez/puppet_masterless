@@ -1,6 +1,6 @@
 #!/bin/bash -e
 ## Run Puppet locally using puppet apply
-/usr/bin/puppet apply /etc/puppet/manifests/site.pp
+puppet apply /etc/puppetlabs/code/environments/production/manifests/site.pp
 
 ## Log status of the Puppet run
 if [ $? -eq 0 ]

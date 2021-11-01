@@ -1,8 +1,8 @@
 class init_conf {
   file { 'post-hook':
     ensure  => file,
-    path    => '/etc/puppet/.git/hooks/post-merge',
-    source  => 'puppet:///modules/init-conf/post-merge.sh',
+    path    => '/home/vagrant/puppet_masterless.git/hooks/post-merge',
+    source  => 'puppet:///modules/init_conf/post-merge',
     mode    => 0755,
     owner   => root,
     group   => root,
@@ -11,9 +11,9 @@ class init_conf {
 
   cron { 'puppet-apply':
     ensure  => present,
-    command => "cd /etc/puppet ; /usr/bin/git pull",
+    command => "cd /home/vagrant/puppet_masterless ; /usr/bin/git pull",
     user    => root,
-    minute  => '*/60',
+    minute  => '*/2',
     require => File['post-hook'],
   }
 
