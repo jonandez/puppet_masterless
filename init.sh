@@ -13,6 +13,7 @@ apt install puppet-agent -y
 apt install git -y
 
 # Create puppet.conf file
+touch /etc/puppet/puppet.conf
 cat << 'EOF' > /etc/puppet/puppet.conf
 
 [main]
@@ -25,7 +26,7 @@ factpath=$confdir/facter
 EOF
 
 # Create run config
-
+touch /etc/puppet/manifests/site.pp
 cat << 'EOF' > /etc/puppet/manifests/site.pp
 
 node default {
@@ -35,5 +36,5 @@ node default {
 EOF
 
 # Pull repo
-cd /etc/puppet/ && git clone https://github.com/jonandez/puppet_masterless.git
+cd /etc/puppet/modules/ && git clone https://github.com/jonandez/puppet_masterless.git
 mv /etc/puppet/modules/puppet_masterless/modules /etc/puppet/modules/ 
